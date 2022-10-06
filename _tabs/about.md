@@ -3,7 +3,7 @@
 icon: fas fa-info-circle
 order: 4
 ---
-I am both a Powershell/Automation enthusiast and a father of the most amazing baby girl in the world. While my career is still in it's infancy as I approach my seventh year, my want to learn and share my own discoveries and insight has pushed me to create this blog.
+I am both a Powershell/Automation enthusiast and a father of the most amazing baby girl in the world. While my career is still in it's infancy as I approach my seventh year, my desire to learn and contribute my own discoveries and insight has pushed me to create this blog.
 
 ### My story
 
