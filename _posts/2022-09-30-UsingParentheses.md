@@ -42,7 +42,7 @@ $Date.AddDays(-365)
 
 # Using parenthesis
 (Get-date).AddDays(-365)
-
+{: .nolineno }
 ```
 
 ![DateExample](Get-Date-Example-01.png){: w="800" h="400" }
@@ -54,12 +54,13 @@ $Date.AddDays(-365)
 # Real Use case scenario
 Get-WinEvent -logName 'system' | Where {$_.Timecreated -gt (get-date).AddDays(-1)}
 ```
+
 ![DateExample](Get-Date-Example-02.png){: .left }
 
 
 
 <span style="color:white;font-weight:500;font-size:22">
-Wrapping the parenthesis around Get-Date allows me to access the method straight away. My best advice would be to try some combinations out yourself, you would be surprised to find out what you can achieve with less code. In the long run this not only makes your code easier to read and write but also debug. 
+Wrapping the parenthesis around `Get-Date` allows me to access the method straight away. My best advice would be to try some combinations out yourself, you would be surprised to find out what you can achieve with less code. In the long run this not only makes your code easier to read and write but also debug. 
 </span>
 
 
