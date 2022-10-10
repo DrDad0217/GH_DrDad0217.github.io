@@ -45,7 +45,7 @@ $Date.AddDays(-365)
 {: .nolineno }
 ```
 
-![DateExample](Get-Date-Example-01.png){: w="800" h="400" }
+![Output from command](Get-Date-Example-01.png){: w="800" h="400" }
 
 
 

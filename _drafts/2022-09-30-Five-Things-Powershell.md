@@ -1,23 +1,9 @@
 ---
 layout: post
-title:  "Five things I wish I would of learned sooner in Powershell"
+title:  "Making good use of parentheses"
 date:   2022-08-31 19:03:31 +/-TTTT
 categories: Powershell
 ---
-* Snacking with Penny :baby:
-* Using Parentheses 
-* Customizing user profile
-* Alias shortcuts to improve productivity
-* Using the help file
-* Using Get Member
-* Creating reusable tools
-* Error handling
-* Passing objects through the pipeline Byvalue and Byproperty
-* PSCustomobject
-* Hash Tables (Nested too?)
-* Arrays
-* Errors and Exception handling
-* Switch
 
 ### Using Parentheses
 
@@ -56,7 +42,7 @@ Get-WinEvent -logName 'system' | Where {$_.Timecreated -gt (get-date).AddDays(-1
 ```
 ![alt text](/assets/img/Five-Things-Posh/Get-Date-Example-02.png)
 
-Wrapping the parenthesis around Get-Date allows me to access the method straight away. My best advice would be to try some combinations out yourself, you would be surprised to find out what you can achieve with less code. In the long run this not only makes your code easier to read and write but also debug as. 
+In the example above we were able to retrieve system logs within the span of the last 24 hours.
 
 
 
