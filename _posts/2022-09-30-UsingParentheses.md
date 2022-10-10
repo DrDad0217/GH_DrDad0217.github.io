@@ -7,7 +7,7 @@ image:
   path: Halloween.png
   width: 1000   # in pixels
   height: 400   # in pixels
-  alt: image alternative text
+  alt: It's the most wonderful time of the year!
 tags: Beginner
 img_path: /assets/img/
 toc: false
