@@ -25,7 +25,7 @@ Restart-Computer -Computername $Computers
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
 <span style="color:white;font-weight:500;font-size:22">
-By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time Restart-Computer goes to read the data from the -Computername parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
+By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time `Restart-Computer` goes to read the data from the -Computername parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
 <span>
 ```powershell
 (Get-command Get-Process).Parameters
