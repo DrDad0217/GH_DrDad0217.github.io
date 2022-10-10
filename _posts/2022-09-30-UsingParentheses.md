@@ -4,7 +4,7 @@ title:  "Cleaning up your code with Parentheses"
 date:   2022-08-31 20:03:31 +/-TTTT
 categories: Powershell
 image:
-  path: /assets/img/parameter-example.png
+  path: Get-Date-Example-01.png
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: image alternative text
