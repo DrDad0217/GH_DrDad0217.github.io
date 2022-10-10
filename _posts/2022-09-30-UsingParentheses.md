@@ -18,10 +18,16 @@ toc: false
 <span style="color:white;font-weight:500;font-size:22">
 When I first discovered the shortcuts you can take with parentheses it opened up my eyes to new levels of creativity with Powershell.
 <span>
+
+Here is an example using a variable to capture the computer names listed in a text file
+
 ```powershell
 $Computers = Get-Content 'C:\Computerlist.txt'
 Restart-Computer -Computername $Computers
-# We can acheive the same results by using parentheses
+```
+We can acheive the same results by supplying the same command wrapped in parentheses so the content is loaded first then evaluated by the `-Computername` property
+```powershell
+
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
 <span style="color:white;font-weight:500;font-size:22">
