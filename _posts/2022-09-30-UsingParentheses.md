@@ -3,7 +3,11 @@ layout: post
 title:  "Cleaning up your code with Parentheses"
 date:   2022-08-31 20:03:31 +/-TTTT
 categories: Powershell
-header : /assets/img/Get-Date-Example-01.png
+image:
+  path: /assets/img/parameter-example.png
+  width: 1000   # in pixels
+  height: 400   # in pixels
+  alt: image alternative text
 tags: Beginner
 img_path: /assets/img/
 toc: false
