@@ -1,31 +1,34 @@
 ---
 layout: post
-title:  "Taking advantage of parentheses"
-date:   2022-08-31 19:03:31 +/-TTTT
+title:  "Cleaning up your code with Parentheses"
+date:   2022-08-31 20:03:31 +/-TTTT
 categories: Powershell 
 tags: Beginner
 img_path: /assets/img/
+toc: false
 ---
 
 
 
-### Using Parentheses
-
-Using parentheses can be helpful in numerous situations, for example have you ever ran something similar to this?
+<span style="color:white;font-weight:500;font-size:22">
+When I first discovered the shortcuts you can take with parentheses it opened up my eyes to new levels of creativity with Powershell.
+<span>
 ```powershell
 $Computers = Get-Content 'C:\Computerlist.txt'
 Restart-Computer -Computername $Computers
 # We can acheive the same results by using parentheses
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
+<span style="color:white;font-weight:500;font-size:22">
 By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time Restart-Computer goes to read the data from the -Computername parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
-
+<span>
 ```powershell
 (Get-command Get-Process).Parameters
 ```
-![alt text](Parameter-Example.png)
-
+![ParamExample](Parameter-Example.png)
+<span style="color:white;font-weight:500;font-size:22">
 Here is another example I use quite often when want to involve thresholds of time or a specific date. 
+</span>
 
 ```powershell
 # Using a variable
@@ -37,7 +40,7 @@ $Date.AddDays(-365)
 
 ```
 
-![alt text](Get-Date-Example-01.png){: w="800" h="400" }
+![DateExample](Get-Date-Example-01.png){: w="800" h="400" }
 
 
 
@@ -46,15 +49,13 @@ $Date.AddDays(-365)
 # Real Use case scenario
 Get-WinEvent -logName 'system' | Where {$_.Timecreated -gt (get-date).AddDays(-1)}
 ```
-![alt text](Get-Date-Example-02.png){: .left }
+![DateExample](Get-Date-Example-02.png){: .left }
 
+
+
+<span style="color:white;font-weight:500;font-size:22">
 Wrapping the parenthesis around Get-Date allows me to access the method straight away. My best advice would be to try some combinations out yourself, you would be surprised to find out what you can achieve with less code. In the long run this not only makes your code easier to read and write but also debug. 
-
-
-
-
-
-
+</span>
 
 
 
