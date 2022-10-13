@@ -15,59 +15,92 @@ toc: false
 
 
 
-<span style="color:white;font-weight:500;font-size:22">
+
 When I first discovered the shortcuts you can take with parentheses it opened up my eyes to new levels of creativity with Powershell.
-<span>
 
-Here is an example using a variable to capture the computer names listed in a text file
+
 
 ```powershell
-$Computers = Get-Content 'C:\Computerlist.txt'
-Restart-Computer -Computername $Computers
-```
-We can acheive the same results by supplying the same command wrapped in parentheses so the content is loaded first then evaluated by the `-Computername` property
-```powershell
-
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
-<span style="color:white;font-weight:500;font-size:22">
+
 By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time `Restart-Computer` goes to read the data from the `-Computername` parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
-<span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Examples
+`Summary of how much time has passed since you were born`
+```powershell
+(Get-Date) - (Get-Date 02/17/1993)
+```
+![DateExample](/assets/img/Get-Date-Example-03.png)
+
+`Retrieve all parameters from cmdlet`
 ```powershell
 (Get-command Get-Process).Parameters
 ```
-![ParamExample](Parameter-Example.png)
-<span style="color:white;font-weight:500;font-size:22">
-Here is another example I use quite often when want to involve thresholds of time or a specific date. 
-</span>
+![DateExample](/assets/img/Parameter-Example.png)
+
+
+`Get system event logs within the last 24 hours`
 
 ```powershell
-# Using a variable
-$Date = Get-Date
-$Date.AddDays(-365)
-
-# Using parenthesis
-(Get-date).AddDays(-365)
-{: .nolineno }
-```
-
-![Output from command](Get-Date-Example-01.png){: w="800" h="400" }
-
-
-
-
-```powershell
-# Real Use case scenario
 Get-WinEvent -logName 'system' | Where {$_.Timecreated -gt (get-date).AddDays(-1)}
 ```
 
-![DateExample](Get-Date-Example-02.png){: .left }
 
+### Subexpression Examples
 
+```powershell
+$UserInfo = [PSCustomObject]@{
+    
+    UserName = 'PoshDad'
+    Email = 'PoshDad@ThePoshDad.Com'
+    Company = 'PoshDadInc'
 
-<span style="color:white;font-weight:500;font-size:22">
-Wrapping the parenthesis around `Get-Date` allows me to access the method straight away. My best advice would be to try some combinations out yourself, you would be surprised to find out what you can achieve with less code. In the long run this not only makes your code easier to read and write but also debug. 
-</span>
+}
+
+"Hi im the $($UserInfo.Username), I work for $($UserInfo.Company), You can reach me at $($UserInfo.Email)"
+
+```
+
+```powershell
+"The first process in the list is $(Get-service | select -ExpandProperty Name -First 1)"
+```
+
+```powershell
+"Two Plus Two is equal to $(2+2)"
+"If I ran Get-Process, the first Process in the list would be $(Get-Process)[0].name"
+```
+
+### Logfile
+
+In the employee separation script I created, there is a logfile generated stating the removal process and what took place. The logfile includes the users name and the date, I will provide an example using a subexpression to accomplish this. 
+
+First I need to capture user information in a variable, I went ahead and created a fake user in Active Directory named 'Tanner Schmidt'
+
+![](/assets/img/User-Log-File-Example-01.png)
 
 
 
