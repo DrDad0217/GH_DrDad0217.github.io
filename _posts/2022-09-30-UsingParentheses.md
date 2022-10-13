@@ -26,41 +26,18 @@ Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 
 By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time `Restart-Computer` goes to read the data from the `-Computername` parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### Examples
 `Summary of how much time has passed since you were born`
 ```powershell
 (Get-Date) - (Get-Date 02/17/1993)
 ```
-![DateExample](/assets/img/Get-Date-Example-03.png)
+![DateExample](Get-Date-Example-03.png)
 
 `Retrieve all parameters from cmdlet`
 ```powershell
 (Get-command Get-Process).Parameters
 ```
-![DateExample](/assets/img/Parameter-Example.png)
+![DateExample](Parameter-Example.png)
 
 
 `Get system event logs within the last 24 hours`
@@ -110,3 +87,4 @@ $Message | Out-File -Path "C:\Temp\$($User.SamAccountName)-$(Get-Date -Format MM
 {: .prompt-info }
 Now lets fetch the results, after navigating to `C:\temp`{: .filepath} I opened up the logfile we created.
 ![](User-Log-File-Example-02.png)
+As shown in the screenshot above we achieved the desired results. 
