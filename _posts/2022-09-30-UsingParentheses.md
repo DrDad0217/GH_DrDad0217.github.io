@@ -93,15 +93,18 @@ $UserInfo = [PSCustomObject]@{
 "Two Plus Two is equal to $(2+2)"
 "If I ran Get-Process, the first Process in the list would be $(Get-Process)[0].name"
 ```
-
-### Logfile
-
 In the employee separation script I created, there is a logfile generated stating the removal process and what took place. The logfile includes the users name and the date, I will provide an example using a subexpression to accomplish this. 
 
 First I need to capture user information in a variable, I went ahead and created a fake user in Active Directory named 'Tanner Schmidt'
 
-![](/assets/img/User-Log-File-Example-01.png)
+![AD User Name And Display Name](User-Log-File-Example-01.png)
+
+Since we are creating a log file, I will create a message as the value that will be populating inside the log file. Once the message is created, we are going to pipe the value inside the `$Message` variable to the `Out-File` Cmdlet. `Out-File` receives the information from the `$Message` variable and creates a new file using the content we provided for the `-Path` parameter.  
 
 
+```powershell
+$Message = "The Employee Separation Script has successfully ran against the user account for $($User.SamAccountName)"
+$Message | Out-File -Path "C:\Temp\$($User.SamAccountName)-$(Get-Date -Format MM-dd-yy).txt"
+```
 
 
