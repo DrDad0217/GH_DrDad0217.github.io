@@ -106,5 +106,6 @@ Since we are creating a log file, I will create a message as the value that will
 $Message = "The Employee Separation Script has successfully ran against the user account for $($User.SamAccountName)"
 $Message | Out-File -Path "C:\Temp\$($User.SamAccountName)-$(Get-Date -Format MM-dd-yy).txt"
 ```
-
+> By default, if there is no filename that matches the name of the logfile you are trying to create `Out-File` will do it automatically
+{: .prompt-info }
 
