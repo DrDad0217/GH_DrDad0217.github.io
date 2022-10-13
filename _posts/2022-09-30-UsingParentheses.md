@@ -108,4 +108,5 @@ $Message | Out-File -Path "C:\Temp\$($User.SamAccountName)-$(Get-Date -Format MM
 ```
 > By default, if there is no filename that matches the name of the logfile you are trying to create `Out-File` will do it automatically, if the name does match and you want to overwrite the file completely you can supply the `-Force` parameter
 {: .prompt-info }
-
+Now lets fetch the results, after navigating to `C:\temp`{: .filepath} I opened up the logfile we created.
+![](User-Log-File-Example-02.png)
