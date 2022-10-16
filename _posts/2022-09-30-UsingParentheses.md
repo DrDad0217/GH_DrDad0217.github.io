@@ -13,10 +13,16 @@ img_path: /assets/img/
 toc: false
 ---
 
+### What exactly do parentheses do in Powershell? 
+Parentheses serve a few purposes in Powershell such as the following
+* Arrays and Hash Tables
+* `Foreach`, `switch` and `If` constructs/conditional statements
+* Methods
+* Subexpressions
+
+Lets kick this article off with a few examples :rocket: :rocket: :rocket:
 
 
-
-When I first discovered the shortcuts you can take with parentheses it opened up my eyes to new levels of creativity with Powershell.
 
 
 
@@ -24,16 +30,17 @@ When I first discovered the shortcuts you can take with parentheses it opened up
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
 
-By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time `Restart-Computer` goes to read the data from the `-Computername` parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
+By including the parentheses you are telling Powershell to load the content enclosed in the parentheses, by the time `Restart-Computer` goes to read the data from the `Computername` parameter  the computer names have already been loaded. A simple one liner to perform an action on multiple computers.
 
-### Examples
-`Summary of how much time has passed since you were born`
+#### How much time has passed since you were born? :clock10:
 ```powershell
 (Get-Date) - (Get-Date 02/17/1993)
 ```
 ![DateExample](Get-Date-Example-03.png)
-
-`Retrieve all parameters from cmdlet`
+Looks like I have been alive a whopping `10,828` days! This example included loading two different dates using the `Get-Date` command, so how does this happen?
+1. The content in the `Get-Date` commands surrounded by `()` get loaded first.
+2. We use the `-` operator to subtract the first date from the second. The first date being the current date, the second being my birthday.
+#### Retrieve all parameters from cmdlet
 ```powershell
 (Get-command Get-Process).Parameters
 ```
