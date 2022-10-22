@@ -14,13 +14,16 @@ toc: false
 ---
 
 ### What exactly do parentheses do in Powershell? 
-Parentheses serve a few purposes in Powershell such as the following
+Parentheses serve numerous purposes in Powershell such as the following
 * Arrays and Hash Tables
 * `Foreach`, `switch` and `If` constructs/conditional statements
 * Methods
 * Subexpressions
 
 Lets kick this article off with a few examples :rocket: :rocket: :rocket:
+
+### *Example 1*
+Say that we have a text file named `computers.txt`. This text file contains a few computer names we would like to restart using Powershell.
 
 
 
@@ -30,9 +33,10 @@ Lets kick this article off with a few examples :rocket: :rocket: :rocket:
 Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
 ```
 
-By including the parentheses you are telling Powershell to load the content enclosed in the parentheses, by the time `Restart-Computer` goes to read the data from the `Computername` parameter  the computer names have already been loaded. A simple one liner to perform an action on multiple computers.
+By wrapping the parentheses arount the `Get-Content` cmdlet you are telling Powershell to load that content first, by the time `Restart-Computer` goes to read the data from the `Computername` parameter  the computer names have already been loaded. A nice and easy one liner to perform an action on multiple computers.
 
-#### How much time has passed since you were born? :clock10:
+### *Example 2*
+For the next example, I am going to use the `Get-Date` cmdlet to calculate how many days,hours and even minutes have gone by since I was born.
 ```powershell
 (Get-Date) - (Get-Date 02/17/1993)
 ```
@@ -40,38 +44,21 @@ By including the parentheses you are telling Powershell to load the content encl
 Looks like I have been alive a whopping `10,828` days! This example included loading two different dates using the `Get-Date` command, so how does this happen?
 1. The content in the `Get-Date` commands surrounded by `()` get loaded first.
 2. We use the `-` operator to subtract the first date from the second. The first date being the current date, the second being my birthday.
-#### Retrieve all parameters from cmdlet
+
+### *Example 3*
 ```powershell
 (Get-command Get-Process).Parameters
 ```
 ![DateExample](Parameter-Example.png)
 
 
-`Get system event logs within the last 24 hours`
-
-```powershell
-Get-WinEvent -logName 'system' | Where {$_.Timecreated -gt (get-date).AddDays(-1)}
-```
 
 
 ### Subexpression Examples
 
-```powershell
-$UserInfo = [PSCustomObject]@{
-    
-    UserName = 'PoshDad'
-    Email = 'PoshDad@ThePoshDad.Com'
-    Company = 'PoshDadInc'
 
-}
 
-"Hi im the $($UserInfo.Username), I work for $($UserInfo.Company), You can reach me at $($UserInfo.Email)"
 
-```
-
-```powershell
-"The first process in the list is $(Get-service | select -ExpandProperty Name -First 1)"
-```
 
 ```powershell
 "Two Plus Two is equal to $(2+2)"
