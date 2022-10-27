@@ -27,7 +27,7 @@ What purpose do parentheses serve in Powershell? Think back to math class when w
 ### *Example 1*
 Say that we have a text file named `computers.txt`. This text file contains a few computer names we would like to restart using Powershell, the text file looks somewhat like this.
 
-`Text File containing computer names` :file_folder:
+`Text File containing computer names` :page_with_curl:
 ```
 Computer-01
 Computer-02
