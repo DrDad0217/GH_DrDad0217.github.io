@@ -120,7 +120,7 @@ Two plus two = four
 ```
 Now thats the output we were looking for, lets look at another example.
 
-I find myself using subexpressions alot with `Get-Date` . Lets create a log file with todays date using a subexpression.
+I find myself using subexpressions a lot with `Get-Date` . Lets create a log file with todays date using a subexpression.
 
 We can start with the contents of the file. I will start by creating a variable containing the value I want to be in the file.
 
@@ -128,7 +128,7 @@ We can start with the contents of the file. I will start by creating a variable 
 $Message = "The dog chased the red ball"
 ```
 
-Now that we have the content for the logfile, lets create the file itself.
+Now that we have the content for the log file, lets create the file itself.
 
 ```powershell
  New-Item -Path "C:\Temp\TestLog-$(Get-Date -Format MM-dd-yy).txt" -Value $Message
@@ -140,7 +140,7 @@ Mode                 LastWriteTime         Length Name
 -a---          10/27/2022  3:25 PM             27 TestLog-10-27-22.txt
 ```
 
-Beautiful! The subexpression allowed us to encorporate todays date into the name of our logfile. For fun lets inspect the content of the file using `Get-Content`
+Beautiful! The subexpression allowed us to incorporate todays date into the name of our log file. For fun lets inspect the content of the file using `Get-Content`
 
 ```powershell
 Get-Content -Path "C:\Temp\TestLog-10-27-22.txt"
@@ -150,6 +150,6 @@ Get-Content -Path "C:\Temp\TestLog-10-27-22.txt"
 The Dog chased the red ball
 ```
 
-Perfect, seems like everything is in order. I hope this article helped you acheive a better understanding of parentheses.
+Perfect, seems like everything is in order. I hope this article helped you achieve a better understanding of parentheses.
 
 PoshDad signing off! :rocket: :rocket: :rocket:
