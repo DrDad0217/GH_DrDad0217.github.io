@@ -15,18 +15,13 @@ toc: false
 
 
 
-
-When I first discovered the shortcuts you can take with parentheses it opened up my eyes to new levels of creativity with Powershell.
-
-
+What purpose do parentheses serve in Powershell? Think back to math class when we were taught order of operations,the math in between the `(2+2)` always needs to be done first. Powershell follows this rule the same way, lets start with a few examples.
 
 ```powershell
-Restart-Computer -Computername (Get-Content 'C:\Computerlist.txt')
+Restart-Computer -Computername (Get-Content -Path 'C:\Computerlist.txt')
 ```
+ Lets say you have a text file containing a multiple computer names you would like to run a command against. `Restart-Computer` looks at the content loaded by the `-Computername` parameter and starts restarting the machines listed in `Computerlist.txt`. 
 
-By including the parentheses you are telling Powershell to load the content surrounded by them first, by the time `Restart-Computer` goes to read the data from the `-Computername` parameter all of the machine names have already been loaded. Here is an example I run whenever I want to inspect ***Just*** the parameters of the command
-
-### Examples
 `Summary of how much time has passed since you were born`
 ```powershell
 (Get-Date) - (Get-Date 02/17/1993)
