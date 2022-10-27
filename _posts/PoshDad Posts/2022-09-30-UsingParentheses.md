@@ -96,6 +96,9 @@ PipelineVariable
 ```
 Here we are using `Get-Command` against the `Get-Process` cmdlet and enclosing it in parentheses. This gives us access to the `parameters` property which also holds a `key` property itself.  For the next section we are going to dive into subexpressions which can come in pretty handy.
 
+
+### Working with subexpressions
+
 Subexpressions are exactly what they sound like, an expression within an expression. What is an expression defined as? You can think of it as anything that we run in our terminal that provides us with an output/result. if you go to powershell right now and type out `2+2` you are using an expression. You could also write out `"Two plus two equals four"` which would also be considered an expression. 
 
 ```powershell
