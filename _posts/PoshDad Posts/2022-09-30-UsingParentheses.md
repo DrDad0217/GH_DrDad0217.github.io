@@ -74,7 +74,7 @@ Unfortunately this would not work, Powershell would read this as the text value 
 ```
 "Two plus two = $(2+2)"
 ```
-`Output`
+`Output` :computer:
 ```
 Two plus two = four
 ```
@@ -93,7 +93,7 @@ Now that we have the content for the logfile, lets create the file itself.
 ```powershell
  New-Item -Path "C:\Temp\TestLog-$(Get-Date -Format MM-dd-yy).txt" -Value $Message
 ```
-`Output`
+`Output` :computer:
 ```
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
@@ -105,7 +105,7 @@ Beautiful! The subexpression allowed us to encorporate todays date into the name
 ```powershell
 Get-Content -Path "C:\Temp\TestLog-10-27-22.txt"
 ```
-`Output`
+`Output` :computer:
 ```
 The Dog chased the red ball
 ```
