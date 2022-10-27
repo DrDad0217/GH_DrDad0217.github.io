@@ -34,7 +34,6 @@ Computer-02
 Computer-03
 
 ```
-
 Heres what the command would look like.
 
 ```powershell
@@ -150,4 +149,4 @@ The Dog chased the red ball
 
 Perfect, seems like everything is in order. I hope this article helped you acheive a better understanding of parentheses.
 
-PoshDad signing off!
+PoshDad signing off! :rocket: :rocket: :rocket:
