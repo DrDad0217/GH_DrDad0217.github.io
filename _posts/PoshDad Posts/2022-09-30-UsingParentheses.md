@@ -22,26 +22,24 @@ Parentheses serve numerous purposes in Powershell such as the following
 
 Lets kick this article off with a few examples :rocket: :rocket: :rocket:
 
-<<<<<<< HEAD
 What purpose do parentheses serve in Powershell? Think back to math class when we were taught order of operations,the math in between the `(2+2)` always needs to be done first. Powershell follows this rule the same way, lets start with a few examples.
-=======
+
 ### *Example 1*
 Say that we have a text file named `computers.txt`. This text file contains a few computer names we would like to restart using Powershell.
->>>>>>> 490c857fdce204e73995dcdd8786cdf00989a0f5
+
 
 ```powershell
 Restart-Computer -Computername (Get-Content -Path 'C:\Computerlist.txt')
 ```
  Lets say you have a text file containing a multiple computer names you would like to run a command against. `Restart-Computer` looks at the content loaded by the `-Computername` parameter and starts restarting the machines listed in `Computerlist.txt`. 
 
-<<<<<<< HEAD
+
 `Summary of how much time has passed since you were born`
-=======
 By wrapping the parentheses arount the `Get-Content` cmdlet you are telling Powershell to load that content first, by the time `Restart-Computer` goes to read the data from the `Computername` parameter  the computer names have already been loaded. A nice and easy one liner to perform an action on multiple computers.
 
 ### *Example 2*
 For the next example, I am going to use the `Get-Date` cmdlet to calculate how many days,hours and even minutes have gone by since I was born.
->>>>>>> 490c857fdce204e73995dcdd8786cdf00989a0f5
+
 ```powershell
 (Get-Date) - (Get-Date 02/17/1993)
 ```
@@ -57,7 +55,6 @@ This example is a trick I use to grab all of the parameters of a command.
 ```
 ![DateExample](Parameter-Example.png)
 Here we are using `Get-Command` against the `Get-Process` cmdlet and enclosing it in parentheses. This gives us access to the `parameters` property which also holds a `key` property itself.  For the next section we are going to dive into subexpressions which can come in pretty handy.
-
 
 Subexpressions are exactly what they sound like, an expression within an expression. What is an expression defined as? You can think of it as anything that we run in our terminal that provides us with an output/result. if you go to powershell right now and type out `2+2` you are using an expression. You could also write out `"Two plus two equals four"` which would also be considered an expression. 
 
