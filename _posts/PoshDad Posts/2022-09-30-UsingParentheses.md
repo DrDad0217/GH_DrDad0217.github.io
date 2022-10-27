@@ -31,11 +31,8 @@ Say that we have a text file named `computers.txt`. This text file contains a fe
 ```powershell
 Restart-Computer -Computername (Get-Content -Path 'C:\Computerlist.txt')
 ```
+
  Lets say you have a text file containing a multiple computer names you would like to run a command against. `Restart-Computer` looks at the content loaded by the `-Computername` parameter and starts restarting the machines listed in `Computerlist.txt`. 
-
-
-`Summary of how much time has passed since you were born`
-By wrapping the parentheses arount the `Get-Content` cmdlet you are telling Powershell to load that content first, by the time `Restart-Computer` goes to read the data from the `Computername` parameter  the computer names have already been loaded. A nice and easy one liner to perform an action on multiple computers.
 
 ### *Example 2*
 For the next example, I am going to use the `Get-Date` cmdlet to calculate how many days,hours and even minutes have gone by since I was born.
