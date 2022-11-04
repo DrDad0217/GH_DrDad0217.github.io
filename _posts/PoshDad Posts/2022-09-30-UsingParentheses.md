@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Cleaning up your code with Parentheses"
+title:  "Utilizing parenthesis in Powershell"
 date:   2022-08-31 20:03:31 +/-TTTT
 categories: Powershell
 image:
@@ -13,8 +13,8 @@ img_path: /assets/img/
 toc: false
 ---
 
-### What exactly do parentheses do in Powershell? 
-Parentheses serve numerous purposes in Powershell such as the following
+### What exactly do parentheies do in Powershell? 
+Parenthesis serve numerous purposes in Powershell such as the following
 * Arrays and Hash Tables
 * `Foreach`, `switch` and `If` constructs/conditional statements
 * Methods
@@ -22,7 +22,7 @@ Parentheses serve numerous purposes in Powershell such as the following
 
 Lets kick this article off with a few examples :rocket: :rocket: :rocket:
 
-What purpose do parentheses serve in Powershell? Think back to math class when we were taught order of operations,the math in between the `(2+2)` always needs to be done first. Powershell follows this rule the same way, lets start with a few examples.
+What purpose do Parenthesis serve in Powershell? Think back to math class when we were taught order of operations,the math in between the `(2+2)` always needs to be done first. Powershell follows this rule the same way, lets start with a few examples.
 
 ### *Example 1*
 Say that we have a text file named `computers.txt`. This text file contains a few computer names we would like to restart using Powershell, the text file looks somewhat like this.
@@ -94,7 +94,7 @@ OutBuffer
 PipelineVariable
 
 ```
-Here we are using `Get-Command` against the `Get-Process` cmdlet and enclosing it in parentheses. This gives us access to the `parameters` property which also holds a `key` property itself.  For the next section we are going to dive into subexpressions which can come in pretty handy.
+Here we are using `Get-Command` against the `Get-Process` cmdlet and enclosing it in Parenthesis. This gives us access to the `parameters` property which also holds a `key` property itself.  For the next section we are going to dive into subexpressions which can come in pretty handy.
 
 
 ### Working with subexpressions
@@ -150,6 +150,6 @@ Get-Content -Path "C:\Temp\TestLog-10-27-22.txt"
 The Dog chased the red ball
 ```
 
-Perfect, seems like everything is in order. I hope this article helped you achieve a better understanding of parentheses.
+Perfect, seems like everything is in order. I hope this article helped you achieve a better understanding of Parenthesis.
 
 PoshDad signing off! :rocket: :rocket: :rocket:
