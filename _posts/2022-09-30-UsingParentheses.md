@@ -64,6 +64,9 @@ Unfortunately this would not work, Powershell would read this as the text value 
 ```
 "Two plus two = $(2+2)"
 ```
+This provides us with the desired results,  `Two plus two = 4`
+Using a subexpression we were able to calculate a result inside our expression.
+
 ```powershell
 "Two Plus Two is equal to $(2+2)"
 "If I ran Get-Process, the first Process in the list would be $(Get-Process)[0].name"
