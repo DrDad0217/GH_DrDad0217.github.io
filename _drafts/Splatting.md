@@ -43,3 +43,62 @@ Function Copy-CustomItem {
 }
 
 ```
+[JeffBrownArticle](https://jeffbrown.tech/powershell-splatting/)
+
+Parameters
+
+```powershell
+[CmdletBinding()]
+param (
+    [Parameter(Mandatory)]
+    [string]
+    $StorageAccountName,
+    [Parameter(Mandatory)]
+    [string]
+    $ResourceGroup,
+    [Parameter(Mandatory)]
+    [ValidateSet("Dev", "Test", "Prod")]
+    [string]
+    $Environment
+)
+```
+Jeff sets the parameters in a hashtable that will be changed depending on the value coming from the environment variable.
+
+```powershell
+
+$stgAcctArgs = @{
+    "AccountName" = $StorageAccountName
+    "ResourceGroupName" = $ResourceGroup
+    "Location" = $null
+    "SkuName" = $null
+}
+```
+Jeff sets up a switch which changes the parameters depending on the environment variable.
+
+
+```powershell
+switch ($Environment) {
+    "Dev" { 
+        $stgAcctArgs.AccountName += "dev"
+        $stgAcctArgs.Location = "westus"
+        $stgAcctArgs.SkuName = "Standard_LRS"
+        break
+    }
+     
+    "Test" { 
+        $stgAcctArgs.AccountName += "test"
+        $stgAcctArgs.Location = "eastus"
+        $stgAcctArgs.SkuName = "Standard_LRS"
+        break
+    }
+    "Prod" { 
+        $stgAcctArgs.AccountName += "prod"
+        $stgAcctArgs.Location = "southcentralus"
+        $stgAcctArgs.SkuName = "Premium_LRS"
+        $stgAcctArgs.EnableHttpsTrafficOnly = $true
+        $stgAcctArgs.MinimumTlsVersion = "TLS1_2"
+        break
+    }
+}
+New-AzStorageAccount @stgAcctArgs
+```
