@@ -22,4 +22,4 @@ I want to say thank you for the following reasons...
 - For showing us how we should treat others with Love,Respect and kindness.
 - Treating me like royalty whenever I am at the Lake house, making me yummy food and all of the Blueberry coffees I stole from you.
 - Bringing Penny surprises and watching her when Cherie has to run errands.
-- Thank you for being you. 
+- Thank you for being you..
