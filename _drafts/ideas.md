@@ -10,3 +10,12 @@
 * Arrays
 * Errors and Exception handling
 * Switch
+
+
+Roadmap for ashton
+
+Discovery and the help system (Helping Yourself Learn)
+Get-Member and exploring properties / Objects
+Objects and why they are important
+Taking advantage of the pipeline
+Variables / Variable scopes
