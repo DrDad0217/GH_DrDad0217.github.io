@@ -15,8 +15,8 @@ toc: false
 
 Dear Mama,
 
-FIRST OFF HAPPY BIRTHDAY  :Rocket: 
-:bowtie:
+FIRST OFF HAPPY BIRTHDAY!!!  
+
 I want to say thank you for the following reasons...
 
 - For always treating me like a son and as one of your own.
