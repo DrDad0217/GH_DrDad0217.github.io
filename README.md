@@ -28,7 +28,7 @@ Follow the instructions in the [Jekyll Docs](https://jekyllrb.com/docs/installat
 Then clone it to your local machine and run:
 
 ```
-$ bundle
+bundle
 ```
 
 ## Usage
