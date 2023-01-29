@@ -102,3 +102,40 @@ switch ($Environment) {
 }
 New-AzStorageAccount @stgAcctArgs
 ```
+
+#PSBoundParameters
+
+function Get-PSBoundParameters {
+    [cmdletbinding()]
+    param(
+        [Parameter(
+
+        )]
+        [string]
+        $ParamOne,
+
+        [Parameter(
+
+        )]
+        [string]
+        $ParamTwo
+    )
+
+    begin {
+        
+        if($Null -ne $Psboundparameters.paramtwo){
+
+        Write-host $PSboundparameters.paramtwo
+        }
+    }
+
+    process {
+        
+    }
+
+    end {
+
+        return $PSBoundParameters
+
+    }
+}
