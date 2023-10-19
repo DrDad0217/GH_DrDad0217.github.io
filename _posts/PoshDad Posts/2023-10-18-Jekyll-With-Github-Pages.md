@@ -4,7 +4,7 @@ title:  "Managing my blog with Jekyll and Github Pages"
 date:   2023-10-18 +/-TTTT
 categories: Documentation
 image:
-  path: Halloween.png
+  path: Jack-O-Lantern.jpg
   width: 1000   # in pixels
   height: 400   # in pixels
   alt: It's the most wonderful time of the year!
