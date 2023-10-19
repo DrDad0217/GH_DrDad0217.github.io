@@ -15,12 +15,6 @@ toc: false
 
 After my fourth time of having to setting this up, I have finally decided to document the process. Here are the tools I am using to run my blog along with additional links. 
 
-<img 
-    align="left" 
-    width="100" 
-    height="100" 
-    src="Get-Date-Example-01.png">
-
 - [Jekyll Install](https://jekyllrb.com/docs/installation/)
 - [Github Pages](https://pages.github.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
@@ -46,13 +40,37 @@ Now we will run a new command propmt window and run the following command to ins
 gem install jekyll bundler
 ```
 
-In my case, I already have a repo set up on Github with the Chirpy theme and have cloned it locally to my machine. I used the [Chirpy starter guide](https://github.com/cotes2020/chirpy-starter) to get started. 
-While in the root of my repo, I will run the following command to install the gems:
+In my case, I already have a repo set up on Github with the Chirpy theme and will be cloning it locally to my machine. I used the [Chirpy starter guide](https://github.com/cotes2020/chirpy-starter) to get started. 
 
 ```powershell
-bundle install
+git clone myrepo
 ```
+This actually failed providing me with this error: *fatal: unable to access 'https://github.com/DrDad0217/myrepo.git/': SSL certificate problem: self-signed certificate in certificate chain*
+
+I found [This](https://confluence.atlassian.com/bbkb/ssl-certificate-problem-self-signed-certificate-in-certificate-chain-error-in-git-1224773006.html#:~:text=The%20error%20message%20%22self%2Dsigned,by%20an%20untrusted%20certificate%20authority.) article which was helpful in configuring a Windows system to use the schannel library built into Windows to handle the SSL backend for HTTP communication.
+
+To do this, I ran the following command in VScode's terminal:
+
+```powershell
+git config --global http.sslBackend schannel
 ```
+After doing so, I was able to clone my repo with no issues.
+
+Since I already have my gemfile configured, I am going to run a command that will start my local server and allow me to view my blog locally. 
+
+```powershell
+Bundle exec jekyll serve
+```
+The output has a lot of information, but the important part is the last line which tells me that my server is running locally on port 4000.
+
+That's great and everything, but I want to have the site automatically refresh every time I make a change in in my editor and save it. I can apply this by adding the livereload 
+flag to my command.
+
+```powershell
+Bundle exec jekyll serve --livereload
+```
+Here's a big thank you from future me to now me for documenting this process. :star:
+
 
 
 

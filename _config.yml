@@ -202,4 +202,5 @@ jekyll-archives:
 
 
 
-gems: ["jemoji"]
+plugins:
+  - jemoji
